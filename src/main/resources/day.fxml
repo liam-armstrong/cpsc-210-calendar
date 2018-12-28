@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.lang.String?>
+<?import javafx.collections.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.liam_armstrong.projectw1.ui.dayController">
+  <children>
+    <TextArea fx:id="CalEventForm_Desc" layoutX="258.0" layoutY="388.0" prefHeight="103.0" prefWidth="143.0" promptText="Description" wrapText="true" />
+    <CheckBox fx:id="CalEventForm_allDay" layoutX="412.0" layoutY="429.0" mnemonicParsing="false" onAction="#disableTimeInput" text="All Day" />
+    <TextField fx:id="CalEventForm_End" layoutX="498.0" layoutY="443.0" prefHeight="28.0" prefWidth="74.0" promptText="End" />
+    <TextField fx:id="CalEventForm_Start" layoutX="498.0" layoutY="405.0" prefHeight="28.0" prefWidth="74.0" promptText="Start" />
+    <Button fx:id="CalEventForm_Submit" layoutX="590.0" layoutY="443.0" mnemonicParsing="false" onMouseReleased="#createCalEvent" text="Create!" />
+    <TextField fx:id="CalEventForm_Title" layoutX="42.0" layoutY="449.0" prefWidth="200.0" promptText="Title" />
+    <ChoiceBox fx:id="CalEventForm_TypeSelection" layoutX="86.0" layoutY="402.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Event" />
+          <String fx:value="Task" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <LineChart fx:id="scheduleChart" createSymbols="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="61.0" layoutY="32.0" legendSide="TOP" legendVisible="false" minHeight="103.0" prefHeight="121.0" prefWidth="552.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+      <xAxis>
+        <NumberAxis fx:id="xAxis" side="BOTTOM" upperBound="2400.0" visible="true" />
+      </xAxis>
+      <yAxis>
+        <NumberAxis side="LEFT" upperBound="10.0" visible="false" />
+      </yAxis>
+    </LineChart>
+    <ListView fx:id="Info_ListView" layoutX="102.0" layoutY="165.0" prefHeight="200.0" prefWidth="240.0" />
+    <Group id="Group" fx:id="Info_Group" layoutX="404.0" layoutY="173.0" visible="false">
+      <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="-19.0" layoutY="-10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0">
+          <fill>
+            <Color blue="0.875" green="0.875" red="0.875" fx:id="x1" />
+          </fill>
+        </Rectangle>
+        <Button fx:id="Info_Remove" layoutX="88.0" layoutY="150.0" mnemonicParsing="false" onAction="#removeCalEvent" text="Remove" />
+        <Text fx:id="Info_Title" layoutX="-12.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" textAlignment="CENTER" wrappingWidth="180.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="103.0" layoutX="2.0" layoutY="32.0" stroke="WHITE" strokeType="INSIDE" width="154.0" />
+        <Label fx:id="Info_Desc" alignment="CENTER" layoutX="8.0" layoutY="38.0" prefHeight="89.0" prefWidth="142.0" text="Desc" wrapText="true" />
+      </children>
+    </Group>
+  </children>
+</AnchorPane>

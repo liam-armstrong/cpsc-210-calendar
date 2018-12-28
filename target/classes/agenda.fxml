@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.liam_armstrong.projectw1.ui.agendaController">
+  <children>
+    <ListView id="Info_ListView" fx:id="ListView" layoutX="56.0" layoutY="92.0" prefHeight="365.0" prefWidth="346.0" />
+    <Group fx:id="Group" layoutX="478.0" layoutY="267.0" visible="true">
+      <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="250.0" layoutX="-39.0" layoutY="-60.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="220.0">
+          <fill>
+            <Color blue="0.875" green="0.875" red="0.875" fx:id="x1" />
+          </fill>
+        </Rectangle>
+        <Text id="Info_Title" fx:id="Title" layoutX="-20.0" layoutY="-32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" textAlignment="CENTER" wrappingWidth="180.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="$x1" height="191.0" layoutX="-20.0" layoutY="-15.0" stroke="WHITE" strokeType="INSIDE" width="180.0" />
+        <Label id="Info_Desc" fx:id="Desc" alignment="CENTER" layoutX="-8.0" layoutY="-4.0" prefHeight="166.0" prefWidth="156.0" text="Desc" wrapText="true" />
+      </children>
+    </Group>
+    <CheckBox fx:id="Event_Check" layoutX="439.0" layoutY="119.0" mnemonicParsing="false" onAction="#toggleCalEvents" text="Events" />
+    <CheckBox fx:id="Tasks_Check" layoutX="439.0" layoutY="149.0" mnemonicParsing="false" onAction="#toggleCalEvents" text="Tasks" />
+  </children>
+</AnchorPane>
