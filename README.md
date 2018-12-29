@@ -4,7 +4,21 @@
 
 For UBC Computer Science's "Software Construction" course (CPSC 210) the students are required to complete a project of their own design, making weekly contributions based on the week's coursework. We had weekly "deliverables", all which were satisfied by this project for a perfect assignment grade
 
-My project, created through
+My project, created with Java 8, Maven, FXML and Gson (Json Library) is a desktop calendar app. The user has the option to view their daily schedule at a glance, and add or remove events on the primary "Day" page. The default starting day is the current day in the user's local timezone: 
+
+![DayView/Main](DayView.PNG)
+
+The user can select a new day to view on the "Month" page:
+
+![MonthView/Secondary](MonthView.PNG)
+
+Finally, the user can see all Events, Tasks, or both, sorted in cronological order from today onward in the "Agenda" page:
+
+![AgendaView/Tertiary](AgendaView.PNG) 
+
+---
+
+The below information is each weekly assigned deliverable, the main goals, and what changed about my project to complete them: 
 
 **Deliverable 1: Basic Interaction**
 > Get basic interaction loop going, use at least one class, and must have multiple methods that are called. 
@@ -22,21 +36,21 @@ Added 4 classes: Calendar, Day, Date, Event. Calendar contained a TreeMap of Day
 Basic File I/O, add to each object to print out, returning a parseable String. Calendar would iterate through it's map, calling that method on each Date/Day and aggregating the Strings, saving them to a "cal.txt" in project path
 
 > You must introduce at least two interfaces, and have one class that implement at least two interfaces.
-> 
+
 Introduced a "Saveable" interface to print in a parseable way, and a "Display" interface with a custom printable method
 
 > You need to write tests for the methods in the interfaces. It's up to you whether you make specific test classes for each interface, or, as is more common in industry, augment the testing of the implementation class to cover the Interface methods.
-> 
+
 Achieved 100% code-coverage with testing for all methods in the system
 
 **Deliverable 4: Abstracts and Extends**
 > You must introduce at least one abstract class. The abstract class should have at least one abstract method. Extend this abstract class with at least 2 classes
-> 
+ 
 Event was abstracted into "CalEvent", with two children: Event and Task. Days now contained a list of CalEvents
 
 **Deliverable 5: Robustness**
 > Create an multiple exceptions and an exception hierarchy with multiple levels of try/catch statements
-> 
+ 
 Created the InvalidDateException (thrown by date) and the InvalidSaveFileException, thrown by each object in the system and caught at the correct level to continue parseing an "invalid" file
 
 **Deliverable 6: Draw Out Your Design**
@@ -44,7 +58,7 @@ Created the InvalidDateException (thrown by date) and the InvalidSaveFileExcepti
 
 **Deliverable 7: Data Relationships**
 > Setup a reflexive relationship within your system. Override equals and hashcode to make this work.
->
+
 There was already a 1:1 reflexive relationship with Days and Dates within the Calendar object's singular TreeMap. Nothing needed to be done that week
 
 **Deliverable 8: Design Principles**
@@ -64,8 +78,4 @@ Added a TimeZone object to Calendar, which used the local IP address to get the 
 **Deliverable 10: Interactivity and Visuals**
 > Add a GUI. Incorporate UI elements such as buttons, and text boxes, a map, creative use of sounds, or visualisations, as appropriate for your application.  Make creative use of visualisation where you can.
 
-Used FXML to build a multi-stage application with several different controllers. All the buttons and lists are FXML native objects. This deliverable was given 2 weeks to be finished, which didn't leave enough time for styling. However, although it wasn't the cleanest looking, the app is fully functional.
-
-![DayView/Main](DayView.png)
-![MonthView/Secondary](MonthView.png)
-![AgendaView/Tertiary](AgendaView.png) 
+Used FXML to build a multi-stage application with several different controllers. All the buttons and lists are FXML native objects. This deliverable was given 2 weeks to be finished, which didn't leave enough time for styling. However, although it wasn't the cleanest looking, the app is fully functional
