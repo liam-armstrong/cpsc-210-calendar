@@ -1,6 +1,6 @@
 
 ### Calendar Personal Project
-### UBC CPSC 210 Winter Term 1 Term Project
+### UBC CPSC 210 Term Project
 
 For UBC Computer Science's "Software Construction" course (CPSC 210) the students are required to complete a project of their own design, making weekly contributions based on the week's coursework. We had weekly "deliverables", all which were satisfied by this project for a perfect assignment grade
 
