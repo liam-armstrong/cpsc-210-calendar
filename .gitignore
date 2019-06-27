@@ -5,3 +5,6 @@ workspace.xml
 calendar.txt
 
 .idea
+*.prefs
+.project
+.classpath
